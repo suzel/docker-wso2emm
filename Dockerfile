@@ -2,6 +2,9 @@ FROM ubuntu:14.04
 MAINTAINER Sukru Uzel <sukru.uzel@gmail.com>
 
 ENV WSO2MDM_VERSION 2.0.1
+ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
+ENV WSO2MDM_HOME /wso2emm-$WSO2MDM_VERSION
+ENV PATH $PATH:$WSO2MDM_HOME/bin
 
 RUN dpkg-divert --local --rename --add /sbin/initctl
 RUN ln -sf /bin/true /sbin/initctl
@@ -19,13 +22,10 @@ RUN apt-get -y install python-software-properties
 RUN add-apt-repository ppa:webupd8team/java -y
 RUN apt-get update
 RUN apt-get install -y --no-install-recommends oracle-java8-installer
-ENV JAVA_HOME /usr/lib/jvm/java-8-oracle
 
 # WSO2 EMM
 RUN wget --user-agent=testuser --referer=http://connect.wso2.com/wso2/getform/reg/new_product_download http://product-dist.wso2.com/products/enterprise-mobility-manager/$WSO2MDM_VERSION/wso2emm-$WSO2MDM_VERSION.zip
 RUN unzip wso2emm-$WSO2MDM_VERSION.zip
-ENV WSO2MDM_HOME /wso2emm-$WSO2MDM_VERSION
-ENV PATH $PATH:$WSO2MDM_HOME/bin
 
 # Expose
 EXPOSE 9763 9443

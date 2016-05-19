@@ -19,5 +19,9 @@ $ docker run --name wso2emm -p 9443:9443 -p 9763:9763 -d suzel/docker-wso2emm
 Then you can access EMM Admin Console in the following URL
 
 ```sh
-open http://$(docker-machine ip default):9443/emm
+open https://$(docker-machine ip default):9443/emm
 ```
+
+## Documentation
+
+* [WSO2 EMM Documentation](https://docs.wso2.com/display/EMM201/WSO2+Enterprise+Mobility+Manager)

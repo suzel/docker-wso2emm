@@ -1,1 +1,3 @@
-docker-test.sh
+.gitignore
+.gitattributes
+README.md

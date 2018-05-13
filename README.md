@@ -2,6 +2,8 @@
 
 [![Go to Docker Hub][docker-hub-icon]][docker-hub-url]
 
+*Note : This repository is no longer maintained.*
+
 WSO2 EMM Enterprise Mobile Management Docker image
 
 ## Installation
